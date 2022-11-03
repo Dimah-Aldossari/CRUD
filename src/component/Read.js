@@ -41,7 +41,7 @@ function Read() {
                         <p>LName: {data.lName}</p>
                         <button onClick={() => { onDelete(data.id) }}>Delet</button>
                         <Link to="/Ubdate">
-                            <button>Update</button></Link>
+                            <button onClick={() => localStorage.setItem("id", data.id)}>Update</button></Link>
 
 
                     </div>
