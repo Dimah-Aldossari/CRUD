@@ -1,23 +1,43 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useEffect, useState } from "react";
+import Create from './component/Create';
+import Read from './component/Read';
+import Ubdate from './component/Ubdate';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+
+import axios from "axios";
 
 function App() {
+  // const [state, setState] = useState([])
+
+  // useEffect(() => {
+  //   axios.get("http://www.omdbapi.com/?i=tt3896198&apikey=c24ecbb2").then((res) => {
+  //     console.log(res.data);
+  //     setState(res.data);
+  //   })
+  // }, [])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+
+
+
+      <Router>
+        <Routes>
+          <Route path="/Create" element={<Create />}></Route>
+          <Route path="/Read" element={<Read />}></Route>
+          <Route path="/Ubdate" element={<Ubdate />}></Route>
+        </Routes>
+      </Router>
+
+      {/* 
+      {state.map(items => {
+        return (
+          <>
+            <p>title: {items.Poster}</p>
+            <p>body: {items.body}</p>
+          </>
+        )
+      })} */}
     </div>
   );
 }
