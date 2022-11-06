@@ -20,7 +20,7 @@ function Ubdate() {
             lName,
 
         }).then(res => {
-            console.log(res.id);
+            console.log(res);
             navigate("/Read");
         }).catch(err => {
             console.log(err);

@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom'
-
-
 import axios from "axios";
+import { useBearStore } from "./Store"
 function Read() {
     const [APIData, setAPIData] = useState([]);
-
+    const bears = useBearStore((state) => state.bears)
+    const increasePopulation = useBearStore((state) => state.increasePopulation)
     let url = "https://62d3e34acd960e45d44f7ccf.mockapi.io/ToDo"
-
 
     useEffect(() => {
         axios.get(url)
@@ -47,7 +46,9 @@ function Read() {
                     </div>
                 )
             })}
+            <h1>{bears} around here ...</h1>
 
+            <button onClick={increasePopulation}>one up</button>
         </div>
     )
 }

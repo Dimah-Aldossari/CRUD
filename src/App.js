@@ -3,7 +3,9 @@ import React, { useEffect, useState } from "react";
 import Create from './component/Create';
 import Read from './component/Read';
 import Ubdate from './component/Ubdate';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Care from './component/Care';
+import Test from './component/Test';
+import { BrowserRouter as Router, Routes, Route, useParams } from 'react-router-dom'
 
 import axios from "axios";
 
@@ -16,6 +18,8 @@ function App() {
   //     setState(res.data);
   //   })
   // }, [])
+
+
   return (
     <div>
 
@@ -26,8 +30,13 @@ function App() {
           <Route path="/Create" element={<Create />}></Route>
           <Route path="/Read" element={<Read />}></Route>
           <Route path="/Ubdate" element={<Ubdate />}></Route>
+          <Route path="/Care" element={<Care />}></Route>
+          <Route path="Test/:id" element={<Test />}></Route>
+
+
         </Routes>
       </Router>
+      {/* <Care /> */}
 
       {/* 
       {state.map(items => {
